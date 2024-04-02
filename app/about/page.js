@@ -1,26 +1,19 @@
 import Accordion from "@/components/Accordion";
 import Image from "next/image";
 import NavButton from "@/components/NavButton";
+import HeroHeader from "@/components/HeroHeader";
 
 const AboutPage = () => {
   return (
     <div>
-      <div className="mb-20 bg-secondary p-8">
-        <div className="w-[70%] mx-auto">
-          <h2 className="text-6xl text-center my-8">About</h2>
-          <h3 className="text-4xl mb-8">
-            We Make Sure Your New Invention is Successful
-          </h3>
-          <p className="text-3xl">
-            The Invention Group has helped hundreds of individuals bring their
+      <div className='mb-32'>
+      <HeroHeader heading='We Make Sure Your New Invention is Successful' headingText='The Invention Group has helped hundreds of individuals bring their
             inventions to market. Our role doesn’t end once the product
             evaluation is done. We’ll help you with any and all of the following
-            aspects of your project:
-          </p>
-        </div>
+            aspects of your project.'/>
       </div>
-      <div className="">
-        <div className="flex justify-around mx-auto items-center mb-20 w-[80%] about-page text-primary">
+      <h3 className='capitalize text-5xl text-center mb-10'>how we can help you</h3>
+        <div className="flex justify-around mx-auto items-center mb-32 w-[80%] about-page text-primary">
           <div>
             <Image
               src="/images/about-image.jpg"
@@ -81,7 +74,7 @@ const AboutPage = () => {
         <div className="text-center mb-40">
           <NavButton text="Request Free Invention Evaluation" link="/about" />
         </div>
-      </div>
+
     </div>
   );
 };

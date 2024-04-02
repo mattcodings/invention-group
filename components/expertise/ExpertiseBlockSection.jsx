@@ -13,7 +13,7 @@ const ExpertiseBlockSection = () => {
     <ul className="grid grid-cols-2 justify-items-center auto-rows-fr">
         
         {expertiseBlocks.map(({title, description})=>{
-            return <li key={title} className="w-[600px] bg-primary mt-8">
+            return <li key={title} className="w-[600px] bg-secondary mt-8">
             <ExpertiseBlock title={title} description={description}/>
             </li>
         })}
