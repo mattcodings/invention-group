@@ -46,16 +46,15 @@ const processes = [
 ];
 const Processes = () => {
   return (
-    <ul>
+    <ul className="flex flex-wrap justify-evenly gap-y-40 mb-40">
       {processes.map((process) => {
         return (
-          <li key={process.description}>
-            <ProcessStep
-              title={process.title}
-              description={process.description}
-              stepNumber={process.stepNumber}
-            />
-          </li>
+          <ProcessStep
+            key={process.description}
+            title={process.title}
+            description={process.description}
+            stepNumber={process.stepNumber}
+          />
         );
       })}
     </ul>

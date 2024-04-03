@@ -67,3 +67,44 @@ export const findInvention = async (userId) => {
     return approvedInvention;
   }
 };
+
+export const findSales = async (salesId) => {
+  if (salesId) {
+    const foundSales = await prisma.sales.findMany({
+      where: { salesId },
+    });
+    return foundSales;
+  }
+};
+
+export const createSales = async (formData) => {
+  const january = formData.get("january");
+  const february = formData.get("february");
+  const march = formData.get("march");
+  const april = formData.get("april");
+  const may = formData.get("may");
+  const june = formData.get("june");
+  const july = formData.get("july");
+  const august = formData.get("august");
+  const september = formData.get("september");
+  const october = formData.get("october");
+  const november = formData.get("november");
+  const december = formData.get("december");
+  await prisma.sales.create({
+    data: {
+      salesId,
+      january,
+      february,
+      march,
+      april,
+      may,
+      june,
+      july,
+      august,
+      september,
+      october,
+      november,
+      december,
+    },
+  });
+};

@@ -1,6 +1,6 @@
 import PendingInventionList from "@/components/PendingInventionList";
 import ApprovedInventionList from "@/components/ApprovedInventionList";
-import { Protect, auth, currentUser } from "@clerk/nextjs";
+import { auth, currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 const AdminPage = async () => {
   const user = await currentUser();

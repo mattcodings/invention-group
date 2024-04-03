@@ -1,5 +1,6 @@
 import HeroHeader from "@/components/HeroHeader";
 import NavButton from "@/components/NavButton";
+import Processes from "@/components/process/Processes";
 import ProcessStepLeft from "@/components/process/ProcessStepLeft";
 import ProcessStepRight from "@/components/process/ProcessStepRight";
 import Image from "next/image";
@@ -52,23 +53,47 @@ const processes = [
 const ProcessPage = () => {
   return (
     <div>
-      <HeroHeader heading='Our Experts Will Tailor a Plan for Your Success' headingText='While each invention is different, we recommend starting with the
+      <HeroHeader
+        heading="Our Experts Will Tailor a Plan for Your Success"
+        headingText="While each invention is different, we recommend starting with the
         following steps to begin the process of bringing your invention to
-        market.'/>
-    
-      <h2 className="text-6xl text-center my-8">The Process</h2>
-      <ul>
-      
-        {processes.map(process=>{
-          return process.stepNumber % 2 === 1 ?
-            <li key={process.stepNumber}><ProcessStepLeft title={process.title} description={process.description} img='/images/meeting-1.jpg'/></li>
-           : <li key={process.stepNumber}><ProcessStepRight title={process.title} description={process.description} img='/images/meeting-1.jpg'/></li>
-        })}
-      </ul>
+        market."
+      />
 
-    <p className="text-center mt-8 text-3xl">When you are ready to begin, submit an invention idea to us!</p>
-    <div className="text-center my-40">
-        <NavButton text="request invention evaluation" link="/submit-invention"/>
+      <h2 className="text-6xl text-center my-20 capitalize">
+        The Process From start to finish
+      </h2>
+      <div className="w-[90%] mx-auto">
+        <Processes />
+        {/* {processes.map((process) => {
+          return process.stepNumber % 2 === 1 ? (
+            <li key={process.stepNumber}>
+              <ProcessStepLeft
+                title={process.title}
+                description={process.description}
+                img="/images/meeting-1.jpg"
+              />
+            </li>
+          ) : (
+            <li key={process.stepNumber}>
+              <ProcessStepRight
+                title={process.title}
+                description={process.description}
+                img="/images/meeting-1.jpg"
+              />
+            </li>
+          );
+        })} */}
+      </div>
+
+      <p className="text-center mt-8 text-3xl">
+        When you are ready to begin, submit an invention idea to us!
+      </p>
+      <div className="text-center my-40">
+        <NavButton
+          text="request invention evaluation"
+          link="/submit-invention"
+        />
       </div>
     </div>
   );

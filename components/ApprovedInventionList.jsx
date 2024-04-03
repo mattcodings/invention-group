@@ -1,7 +1,8 @@
 import { getAllPendingInventions } from "../utils/actions";
 import DenyInvention from "@/components/DenyInvention";
 import Link from "next/link";
-const PendingInventionList = async () => {
+import MonthlySalesForm from "@/components/MonthlySalesForm";
+const ApprovedInventionList = async () => {
   const inventions = await getAllPendingInventions();
 
   if (inventions.length === 0) {
@@ -20,13 +21,13 @@ const PendingInventionList = async () => {
                 <h3>{invention.nameOfInventor}</h3>
                 <h3>{invention.userId}</h3>
                 <p>{invention.description}</p>
-                <Link href={`/admin/${invention.id}`}>Approve Form</Link>
-                <DenyInvention id={invention.id} />
-                {invention.isApproved ? (
-                  <span>approved</span>
-                ) : (
-                  <span>not approved</span>
-                )}
+                <div className="flex">
+                  <Link href={`/admin/${invention.id}`}>
+                    <button className="btn">Approve Form</button>
+                  </Link>
+                  <DenyInvention id={invention.id} />
+                </div>
+                <MonthlySalesForm inventionId={invention.id} />
               </li>
             );
           }
@@ -35,4 +36,4 @@ const PendingInventionList = async () => {
     </div>
   );
 };
-export default PendingInventionList;
+export default ApprovedInventionList;

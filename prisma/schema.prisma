@@ -21,25 +21,43 @@ model Invention {
   isApproved Boolean @default(false)
   creationDate DateTime @default(now())
   approvedDate DateTime
+  monthlySales Sales[]
 }
 
-model User {
+model Sales {
   id String @id @default (uuid())
-  email String @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  purchase Purchase[]
-  inventionId String
+  salesId String
+  january Int @default(0)
+february Int @default(0)
+march Int @default(0)
+april Int @default(0)
+may Int @default(0)
+june Int @default(0)
+july Int @default(0)
+august Int @default(0)
+september Int @default(0)
+october Int @default(0)
+november Int @default(0)
+december Int @default(0)
+  invention Invention @relation(fields: [salesId], references: [id], onDelete: Cascade)
 }
 
-model Purchase {
-  id String @id @default (uuid())
-  priceForApproval Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  userId String
-  inventionId String
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+// model User {
+//   id String @id @default (uuid())
+//   email String @unique
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+//   purchase Purchase[]
+//   inventionId String
+// }
+
+// model Purchase {
+//   id String @id @default (uuid())
+//   priceForApproval Int
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+//   userId String
+//   inventionId String
+//   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   
-}
-
+// }
