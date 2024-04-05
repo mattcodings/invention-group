@@ -8,6 +8,7 @@ const ApprovedInventionList = async () => {
   if (inventions.length === 0) {
     return <h2>No inventions submitted</h2>;
   }
+  console.log(inventions);
 
   return (
     <div>

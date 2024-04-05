@@ -1,7 +1,7 @@
 import { approveInvention, denyInvention } from "@/utils/actions";
 import DenyInvention from "./DenyInvention";
 
-const ApproveInvention = ({ invention }) => {
+const ApproveInvention = async ({ invention }) => {
   const {
     id,
     isApproved,
@@ -12,11 +12,11 @@ const ApproveInvention = ({ invention }) => {
     nameOfInventor,
     userId,
   } = invention;
-  const logStuff = () => {
-    const log = console.log("hello");
-    return log;
+  const newId = async () => {
+    return await invention.id;
   };
-  logStuff();
+  const inventionId = await newId();
+  console.log(inventionId);
 
   return (
     <div className="w-[500px] mx-auto">
@@ -26,7 +26,7 @@ const ApproveInvention = ({ invention }) => {
       <p>{description}</p>
       <div className="flex justify-around">
         <form action={approveInvention}>
-          <input type="hidden" name="id" value={id} />
+          <input type="hidden" name="id" defaultValue={inventionId} />
           <button
             type="submit"
             id="isApproved"

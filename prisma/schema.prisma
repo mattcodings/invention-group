@@ -25,8 +25,7 @@ model Invention {
 }
 
 model Sales {
-  id String @id @default (uuid())
-  salesId String
+  salesId String @unique
   january Int @default(0)
 february Int @default(0)
 march Int @default(0)
@@ -41,23 +40,3 @@ november Int @default(0)
 december Int @default(0)
   invention Invention @relation(fields: [salesId], references: [id], onDelete: Cascade)
 }
-
-// model User {
-//   id String @id @default (uuid())
-//   email String @unique
-//   createdAt DateTime @default(now())
-//   updatedAt DateTime @updatedAt
-//   purchase Purchase[]
-//   inventionId String
-// }
-
-// model Purchase {
-//   id String @id @default (uuid())
-//   priceForApproval Int
-//   createdAt DateTime @default(now())
-//   updatedAt DateTime @updatedAt
-//   userId String
-//   inventionId String
-//   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-  
-// }

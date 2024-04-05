@@ -1,8 +1,9 @@
-import { createSales } from "@/utils/actions";
+import { createSales, updateSales } from "@/utils/actions";
 import MonthInput from "@/components/MonthInput";
 
-const MonthlySalesForm = ({ id }) => {
-  const inventionId = id;
+const MonthlySalesForm = ({ inventionId }) => {
+  console.log(inventionId);
+  const id = inventionId;
   const months = [
     "january",
     "february",
@@ -18,9 +19,9 @@ const MonthlySalesForm = ({ id }) => {
     "december",
   ];
   return (
-    <form action={createSales}>
+    <form action={updateSales}>
       <h2>Enter the sales for this invention</h2>
-      <input type="text" name="salesId" value={inventionId} />
+      <input type="text" name="salesId" defaultValue={id} />
       {months.map((month) => {
         return (
           <li key={month}>

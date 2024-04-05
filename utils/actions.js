@@ -56,6 +56,23 @@ export const approveInvention = async (formData) => {
       isApproved: true,
     },
   });
+  await prisma.sales.create({
+    data: {
+      salesId: id,
+      january: 0,
+      february: 0,
+      march: 0,
+      april: 0,
+      may: 0,
+      june: 0,
+      july: 0,
+      august: 0,
+      september: 0,
+      october: 0,
+      november: 0,
+      december: 0,
+    },
+  });
   redirect("/admin");
 };
 
@@ -68,31 +85,53 @@ export const findInvention = async (userId) => {
   }
 };
 
-export const findSales = async (salesId) => {
-  if (salesId) {
-    const foundSales = await prisma.sales.findMany({
-      where: { salesId },
-    });
-    return foundSales;
-  }
-};
+// export const findSales = async (salesId) => {
+//   if (salesId) {
+//     const foundSales = await prisma.sales.findUnique({
+//       where: { salesId },
+//     });
+//     return foundSales;
+//   }
+// };
 
-export const createSales = async (formData) => {
-  const january = formData.get("january");
-  const february = formData.get("february");
-  const march = formData.get("march");
-  const april = formData.get("april");
-  const may = formData.get("may");
-  const june = formData.get("june");
-  const july = formData.get("july");
-  const august = formData.get("august");
-  const september = formData.get("september");
-  const october = formData.get("october");
-  const november = formData.get("november");
-  const december = formData.get("december");
-  await prisma.sales.create({
+// export const createSales = async (formData) => {
+//   const salesId = formData.get("salesId");
+//   await prisma.sales.create({
+//     data: {
+//       salesId,
+//       january: 0,
+//       february: 0,
+//       march: 0,
+//       april: 0,
+//       may: 0,
+//       june: 0,
+//       july: 0,
+//       august: 0,
+//       september: 0,
+//       october: 0,
+//       november: 0,
+//       december: 0,
+//     },
+//   });
+// };
+
+export const updateSales = async (formData) => {
+  const january = Number(formData.get("january"));
+  const february = Number(formData.get("february"));
+  const march = Number(formData.get("march"));
+  const april = Number(formData.get("april"));
+  const may = Number(formData.get("may"));
+  const june = Number(formData.get("june"));
+  const july = Number(formData.get("july"));
+  const august = Number(formData.get("august"));
+  const september = Number(formData.get("september"));
+  const october = Number(formData.get("october"));
+  const november = Number(formData.get("november"));
+  const december = Number(formData.get("december"));
+  const salesId = formData.get("salesId");
+  await prisma.sales.update({
+    where: { salesId },
     data: {
-      salesId,
       january,
       february,
       march,
