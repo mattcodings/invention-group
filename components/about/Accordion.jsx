@@ -38,25 +38,12 @@ const accordionInfo = [
   },
 ];
 const Accordion = () => {
-  const colors = [
-    "blue-100",
-    "blue-200",
-    "blue-300",
-    "blue-400",
-    "blue-500",
-    "blue-600",
-    "blue-700",
-  ];
   return (
-    <div className="w-[500px]">
+    <div className="lg:w-[500px]">
       {accordionInfo.map((item, index) => {
         return (
           <div key={item.title}>
-            <AccordionItem
-              title={item.title}
-              description={item.description}
-              color={colors[index]}
-            />
+            <AccordionItem title={item.title} description={item.description} />
           </div>
         );
       })}

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Navlink from "./Navlink";
+import Navlink from "./nav/Navlink";
 const links = [
   { title: "Home", path: "/" },
   { title: "About", path: "/about" },
@@ -11,8 +11,8 @@ const img = "/images/logo.jpg";
 const Footer = () => {
   return (
     <div className="bg-primary">
-      <Image src={img} width={100} height={100} alt="logo" />
-      <ul className="flex text-2xl justify-evenly p-8">
+      {/* <Image src={img} width={100} height={100} alt="logo" /> */}
+      <ul className="flex text-2xl justify-evenly p-8 text-white">
         {links.map((link) => {
           const { img, title, path } = link;
           return (

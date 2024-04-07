@@ -85,14 +85,14 @@ export const findInvention = async (userId) => {
   }
 };
 
-// export const findSales = async (salesId) => {
-//   if (salesId) {
-//     const foundSales = await prisma.sales.findUnique({
-//       where: { salesId },
-//     });
-//     return foundSales;
-//   }
-// };
+export const findSales = async (salesId) => {
+  if (salesId) {
+    const foundSales = await prisma.sales.findUnique({
+      where: { salesId },
+    });
+    return foundSales;
+  }
+};
 
 // export const createSales = async (formData) => {
 //   const salesId = formData.get("salesId");

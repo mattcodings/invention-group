@@ -46,7 +46,7 @@ const processes = [
 ];
 const Processes = () => {
   return (
-    <ul className="flex flex-wrap justify-evenly gap-y-40 mb-40">
+    <ul className="flex flex-wrap justify-evenly gap-y-10 mb-20">
       {processes.map((process) => {
         return (
           <ProcessStep

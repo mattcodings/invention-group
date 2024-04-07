@@ -1,5 +1,5 @@
 import { SignIn, UserProfile, auth, currentUser } from "@clerk/nextjs";
-import InventionForm from "@/components/InventionForm";
+import InventionForm from "@/components/user/InventionForm";
 import Link from "next/link";
 import { findInvention } from "@/utils/actions";
 import { redirect } from "next/navigation";

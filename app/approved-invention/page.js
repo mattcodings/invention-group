@@ -1,8 +1,8 @@
 import { auth } from "@clerk/nextjs";
 import { findInvention } from "../../utils/actions";
-import PendingInventionApproval from "../../components/PendingInventionApproval";
-import ApprovedInventionData from "../../components/ApprovedInventionData";
-import SalesBarChart from "../../components/SalesBarChart";
+import PendingInventionApproval from "../../components/user/PendingInventionApproval";
+import ApprovedInventionData from "../../components/user/ApprovedInventionData";
+import SalesBarChart from "../../components/user/SalesBarChart";
 import { currentUser } from "@clerk/nextjs";
 
 const ApprovedInventionPage = async () => {

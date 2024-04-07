@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --toastify-color-success: #07bc0c;
 }
 
 /* Components */
@@ -35,26 +36,9 @@
   background-repeat: no-repeat;
 }
 
-/* .slide-animation {
-  animation: show 2.5s linear infinite;
+.active {
+  background-color: #b7dbeb;
+  color: #12376f;
+  border-radius: 9px;
+  padding: 6px 0px;
 }
-@keyframes show {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-} */
-/* 
-light blue: #B7DBEB
-yellow: #FFC857 #FFC801
-#DFD6A7
-*/
