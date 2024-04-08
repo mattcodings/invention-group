@@ -10,6 +10,7 @@ export default authMiddleware({
     "/faq",
     "/sign-in",
     "/sign-up",
+    "/stripe-test",
   ],
   // Routes that can always be accessed, and have
   // no authentication information

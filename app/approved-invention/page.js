@@ -24,27 +24,27 @@ const ApprovedInventionPage = async () => {
   return (
     <div className="w-[80%] mx-auto">
       <h2 className="text-6xl text-center my-20">My Invention</h2>
-      <div className="flex mb-20 justify-evenly bg-primary py-20 items-center">
-        <div className="bg-primary p-6">
-          <h2 className="card-title text-3xl text-neutral">My Info</h2>
-          <ul>
-            <li className=" text-accent text-2xl py-6">
+      <div className="">
+        <div className="p-6">
+          <ul className="flex justify-between text-center flex-wrap">
+            {/* <li className="text-2xl py-6">
               <p className="text-2xl">ID:</p> <p>{userId}</p>
+            </li> */}
+            <li className="text-2xl py-6 border-4 border-t-0 p-4 w-1/4 min-w-52 break-words">
+              <p className="text-2xl">Account Created:</p>{" "}
+              <p>{accountCreatedDate}</p>
             </li>
-            <li className=" text-accent text-2xl py-6">
-              <p className="text-2xl">Account Created:</p> {accountCreatedDate}
-            </li>
-            <li className=" text-accent text-2xl py-6">
-              <p className="text-2xl">Last Login:</p> {lastSignInDate}
+            <li className="text-2xl py-6 border-4 border-t-0 p-4 w-1/4 min-w-52 break-words">
+              <p className="text-2xl">Last Login:</p> <p>{lastSignInDate}</p>
             </li>
 
-            <li className=" text-accent text-2xl py-6">
+            <li className="text-2xl py-6 border-4 border-t-0 p-8 w-1/4 min-w-52 break-words">
               <p className="text-2xl">Name of Inventor:</p>
-              {invention.nameOfInventor}
+              <p>{invention.nameOfInventor}</p>
             </li>
-            <li className=" text-accent text-2xl py-6">
+            <li className="text-2xl py-6 border-4 border-t-0 p-8 w-1/4 min-w-52 break-words">
               <p className="text-2xl">Inventor Email:</p>
-              {user.emailAddresses[0].emailAddress}
+              <p>{user.emailAddresses[0].emailAddress}</p>
             </li>
           </ul>
         </div>

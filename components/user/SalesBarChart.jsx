@@ -57,26 +57,23 @@ const SalesBarChart = ({ newSales }) => {
           <p className="text-center text-3xl text-accent">${totalProfit}</p>
         </div>
       </div>
-      <BarChart
-        width={500}
-        height={500}
-        data={sales}
-        className="mx-auto bg-primary mb-8"
-      >
-        <YAxis tick={{ fill: "#B7DBEB" }} tickLine={{ stroke: "#B7DBEB" }} />
-        <XAxis
-          dataKey="month"
-          tick={{ fill: "#B7DBEB" }}
-          tickLine={{ stroke: "#B7DBEB" }}
-          angle={-90}
-          dy={15}
-          dx={-5}
-        />
-        <Tooltip />
-        <Legend wrapperStyle={{ paddingTop: "10px" }} />
-        <Bar dataKey="sales" stroke="#B7DBEB" fill="#B7DBEB" />
-        <Bar dataKey="profit" stroke="#FFC857" fill="#FFC857" />
-      </BarChart>
+      <ResponsiveContainer width="80%" height={500}>
+        <BarChart data={sales} className="mx-auto bg-primary mb-8">
+          <YAxis tick={{ fill: "#B7DBEB" }} tickLine={{ stroke: "#B7DBEB" }} />
+          <XAxis
+            dataKey="month"
+            tick={{ fill: "#B7DBEB" }}
+            tickLine={{ stroke: "#B7DBEB" }}
+            angle={-90}
+            dy={15}
+            dx={-5}
+          />
+          <Tooltip />
+          <Legend wrapperStyle={{ paddingTop: "10px" }} />
+          <Bar dataKey="sales" stroke="#B7DBEB" fill="#B7DBEB" />
+          <Bar dataKey="profit" stroke="#FFC857" fill="#FFC857" />
+        </BarChart>
+      </ResponsiveContainer>
     </div>
   );
 };
