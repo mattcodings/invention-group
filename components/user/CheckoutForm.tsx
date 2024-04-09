@@ -7,6 +7,7 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import Link from "next/link";
 import { FormEvent, useState } from "react";
 type CheckoutFormProps = {
   clientSecret: string;
@@ -45,7 +46,7 @@ function Form() {
       .confirmPayment({
         elements,
         confirmParams: {
-          return_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/stripe/successful-purchase`,
+          return_url: `/stripe/successful-purchase`,
         },
       })
       .then(({ error }) => {
@@ -66,13 +67,15 @@ function Form() {
 
       <PaymentElement />
       <div className="flex justify-center">
-        <button
-          type="submit"
-          className="btn mt-8 bg-neutral hover:bg-primary hover:border-neutral hover:text-neutral"
-          disabled={stripe == null || elements == null || isLoading}
-        >
-          {isLoading ? "Loading..." : "Purchase"}
-        </button>
+        <Link href="/stripe/successful-purchase">
+          <button
+            type="submit"
+            className="btn mt-8 bg-neutral hover:bg-primary hover:border-neutral hover:text-neutral"
+            disabled={stripe == null || elements == null || isLoading}
+          >
+            {isLoading ? "Loading..." : "Purchase"}
+          </button>
+        </Link>
       </div>
     </form>
   );
