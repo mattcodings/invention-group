@@ -19,7 +19,7 @@ const Home = () => {
       <WhyChooseUs />
       <UserToDo />
       <h3 className="text-5xl text-center my-20 text-primary">
-        Let's Get Started!
+        Lets Get Started!
       </h3>
       <div className="text-center my-20">
         <button className=" btn-primary text-3xl p-8 border rounded-2xl bg-primary">
