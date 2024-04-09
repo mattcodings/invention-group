@@ -2,13 +2,18 @@
 import prisma from "@/utils/db";
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-
 export async function getAllPendingInventions() {
-  return await prisma.invention.findMany({
-    orderBy: {
-      creationDate: "desc",
-    },
-  });
+  try {
+    const inventions = await prisma.invention.findMany({
+      orderBy: {
+        creationDate: "desc",
+      },
+    });
+    return inventions;
+  } catch (error) {
+    console.error("Error fetching pending inventions:", error);
+    throw error;
+  }
 }
 
 export async function createInvention(formData) {
