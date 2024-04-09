@@ -13,7 +13,7 @@ const SuccessfulPurchase = async () => {
   };
   const invention = await grabInvention();
 
-  const id = invention[0].id;
+  const id = invention?.[0].id;
   payForInvention(id);
   return (
     <div className="min-h-screen flex gap-8 justify-center items-center">
