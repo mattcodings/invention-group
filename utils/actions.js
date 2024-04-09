@@ -4,13 +4,13 @@ import { auth } from "@clerk/nextjs";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-export const getAllPendingInventions = async () => {
+export async function getAllPendingInventions() {
   return await prisma.invention.findMany({
     orderBy: {
       creationDate: "desc",
     },
   });
-};
+}
 
 export const createInvention = async (formData) => {
   const { userId } = auth();
