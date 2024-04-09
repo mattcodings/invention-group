@@ -29,10 +29,7 @@ const ExpertiseBlockSection = () => {
     <ul className="lg:grid lg:grid-cols-2 lg:justify-items-center lg:auto-rows-fr">
       {expertiseBlocks.map(({ title, description }) => {
         return (
-          <li
-            key={title}
-            className="lg:w-[500px] xl:w-[600px] bg-secondary mt-8"
-          >
+          <li key={title} className="lg:w-[500px] xl:w-[600px] bg-primary mt-8">
             <ExpertiseBlock title={title} description={description} />
           </li>
         );

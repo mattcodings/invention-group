@@ -4,20 +4,19 @@ import GetStripe from "./GetStripe";
 import SalesBarChart from "./SalesBarChart";
 
 const ApprovedInventionData = async ({ invention }) => {
-  // const { userId } = auth();
-  // const user = await currentUser();
-
   const { id, nameOfInvention } = invention;
   const newSales = await findSales(id);
-  console.log(newSales);
+  console.log(invention.paidFor);
   return (
     <div className="text-neutral bg-primary">
-      <h2 className="text-5xl capitalize mb-8 text-center font-bold">
+      <h2 className="text-5xl capitalize my-8 p-8 text-center font-bold">
         {nameOfInvention}
       </h2>
-
-      <SalesBarChart newSales={newSales} />
-      <GetStripe />
+      {invention.paidFor ? (
+        <SalesBarChart newSales={newSales} />
+      ) : (
+        <GetStripe />
+      )}
     </div>
   );
 };

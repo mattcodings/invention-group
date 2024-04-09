@@ -34,14 +34,14 @@ const AboutPage = () => {
       <div className="bg-secondary py-20 mb-40">
         <div className="lg:flex w-[85%] mx-auto justify-around">
           <InfoCard
-            img="/images/presentation-1.jpg"
+            img="/images/map-of-usa.jpg"
             heading="Largest in the Country"
             text="The Invention Group is the largest inventor support company in the
           United States. We have been assisting individuals with their invention
           ideas for over 30 years."
           />
           <InfoCard
-            img="/images/presentation-1.jpg"
+            img="/images/industry-connections.jpg"
             heading="Industry Connections"
             text="We maintain the largest network of sales offices in the country.
                 We’ll use those connections to drive sales through the roof."

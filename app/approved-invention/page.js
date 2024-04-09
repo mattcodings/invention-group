@@ -16,7 +16,7 @@ const ApprovedInventionPage = async () => {
   };
   const invention = await grabInvention();
 
-  if (!invention.isApproved) {
+  if (!invention?.isApproved) {
     return <PendingInventionApproval invention={invention} />;
   }
   const lastSignInDate = new Date(user.lastSignInAt).toLocaleString();

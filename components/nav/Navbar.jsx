@@ -30,13 +30,15 @@ const Navbar = async () => {
   return (
     <div className="flex bg-primary justify-between h-32 items-center lg:text-2xl">
       <div>
-        <Image
-          src="/images/theinventiongrouplogo.png"
-          alt="meeting"
-          width={75}
-          height={100}
-          className="ml-8"
-        />
+        <Link href="/">
+          <Image
+            src="/images/theinventiongrouplogo.png"
+            alt="meeting"
+            width={75}
+            height={100}
+            className="ml-8"
+          />
+        </Link>
       </div>
       <div className="bg-primary flex justify-end">
         <div className="flex items-center">

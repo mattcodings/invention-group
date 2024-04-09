@@ -21,6 +21,7 @@ model Invention {
   isApproved Boolean @default(false)
   creationDate DateTime @default(now())
   approvedDate DateTime
+  paidFor Boolean @default(false)
   monthlySales Sales[]
 }
 

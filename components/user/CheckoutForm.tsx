@@ -18,7 +18,12 @@ const stripePromise = loadStripe(
 const CheckoutForm = ({ clientSecret }: CheckoutFormProps) => {
   return (
     <div className="border-8 w-[500px] mx-auto my-20 p-8 rounded-lg border-primary">
-      <div className="text-3xl">$150.00</div>
+      <p className="text-[1.25em] mb-8">
+        Your invention has been approved! The next step is to make a payment.
+        Once you have made this payment, you will start to receive updates on
+        your invention's sales.
+      </p>
+      <div className="text-4xl text-center">Total: $150.00</div>
       <Elements options={{ clientSecret }} stripe={stripePromise}>
         <Form />
       </Elements>
@@ -53,16 +58,22 @@ function Form() {
       .finally(() => setIsLoading(false));
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      className="border-2 rounded-lg border-neutral p-8 bg-secondary"
+    >
       {errorMessage ? <div>{errorMessage}</div> : ""}
+
       <PaymentElement />
-      <button
-        type="submit"
-        className="btn"
-        disabled={stripe == null || elements == null || isLoading}
-      >
-        {isLoading ? "Loading..." : "Purchase"}
-      </button>
+      <div className="flex justify-center">
+        <button
+          type="submit"
+          className="btn mt-8 bg-neutral hover:bg-primary hover:border-neutral hover:text-neutral"
+          disabled={stripe == null || elements == null || isLoading}
+        >
+          {isLoading ? "Loading..." : "Purchase"}
+        </button>
+      </div>
     </form>
   );
 }

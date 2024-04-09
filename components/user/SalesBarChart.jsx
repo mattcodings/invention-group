@@ -50,14 +50,14 @@ const SalesBarChart = ({ newSales }) => {
     .reduce((acc, obj) => acc + obj.profit, 0)
     .toLocaleString("en-US", options);
   return (
-    <div>
+    <div className="mb-8">
       <div className="card w-96 shadow-xl bg-primary mx-auto mb-8 border-8 border-secondary">
         <div className="card-body items-center text-center">
           <h2 className="card-title text-3xl text-neutral">Total Profit</h2>
           <p className="text-center text-3xl text-accent">${totalProfit}</p>
         </div>
       </div>
-      <ResponsiveContainer width="80%" height={500}>
+      <ResponsiveContainer width="80%" height={500} className="mx-auto">
         <BarChart data={sales} className="mx-auto bg-primary mb-8">
           <YAxis tick={{ fill: "#B7DBEB" }} tickLine={{ stroke: "#B7DBEB" }} />
           <XAxis
@@ -69,7 +69,7 @@ const SalesBarChart = ({ newSales }) => {
             dx={-5}
           />
           <Tooltip />
-          <Legend wrapperStyle={{ paddingTop: "10px" }} />
+          <Legend wrapperStyle={{ paddingTop: "10px", fontSize: "32px" }} />
           <Bar dataKey="sales" stroke="#B7DBEB" fill="#B7DBEB" />
           <Bar dataKey="profit" stroke="#FFC857" fill="#FFC857" />
         </BarChart>

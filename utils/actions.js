@@ -47,6 +47,15 @@ export const getInvention = async (id) => {
   });
 };
 
+export const payForInvention = async (id) => {
+  await prisma.invention.update({
+    where: { id },
+    data: {
+      paidFor: true,
+    },
+  });
+};
+
 export const approveInvention = async (formData) => {
   const id = formData.get("id");
   const isApproved = formData.get("isApproved");
