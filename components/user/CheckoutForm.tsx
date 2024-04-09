@@ -22,7 +22,7 @@ const CheckoutForm = ({ clientSecret }: CheckoutFormProps) => {
       <p className="text-[1.25em] mb-8">
         Your invention has been approved! The next step is to make a payment.
         Once you have made this payment, you will start to receive updates on
-        your invention's sales.
+        your inventions sales.
       </p>
       <div className="text-4xl text-center">Total: $150.00</div>
       <Elements options={{ clientSecret }} stripe={stripePromise}>
