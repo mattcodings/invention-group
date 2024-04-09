@@ -1,7 +1,6 @@
 "use server";
 import prisma from "@/utils/db";
 import { auth } from "@clerk/nextjs";
-import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export async function getAllPendingInventions() {
@@ -12,7 +11,7 @@ export async function getAllPendingInventions() {
   });
 }
 
-export const createInvention = async (formData) => {
+export async function createInvention(formData) {
   const { userId } = auth();
   const nameOfInventor = formData.get("nameOfInventor");
   const nameOfInvention = formData.get("nameOfInvention");
@@ -30,33 +29,33 @@ export const createInvention = async (formData) => {
     },
   });
   redirect("/approved-invention");
-};
+}
 
-export const denyInvention = async (formData) => {
+export async function denyInvention(formData) {
   const id = formData.get("id");
   await prisma.invention.delete({
     where: { id },
   });
   redirect("/admin");
   // revalidatePath("/admin");
-};
+}
 
-export const getInvention = async (id) => {
+export async function getInvention(id) {
   return prisma.invention.findUnique({
     where: { id },
   });
-};
+}
 
-export const payForInvention = async (id) => {
+export async function payForInvention(id) {
   await prisma.invention.update({
     where: { id },
     data: {
       paidFor: true,
     },
   });
-};
+}
 
-export const approveInvention = async (formData) => {
+export async function approveInvention(formData) {
   const id = formData.get("id");
   const isApproved = formData.get("isApproved");
   await prisma.invention.update({
@@ -83,48 +82,27 @@ export const approveInvention = async (formData) => {
     },
   });
   redirect("/admin");
-};
+}
 
-export const findInvention = async (userId) => {
+export async function findInvention(userId) {
   if (userId) {
     const approvedInvention = await prisma.invention.findMany({
       where: { userId },
     });
     return approvedInvention;
   }
-};
+}
 
-export const findSales = async (salesId) => {
+export async function findSales(salesId) {
   if (salesId) {
     const foundSales = await prisma.sales.findUnique({
       where: { salesId },
     });
     return foundSales;
   }
-};
+}
 
-// export const createSales = async (formData) => {
-//   const salesId = formData.get("salesId");
-//   await prisma.sales.create({
-//     data: {
-//       salesId,
-//       january: 0,
-//       february: 0,
-//       march: 0,
-//       april: 0,
-//       may: 0,
-//       june: 0,
-//       july: 0,
-//       august: 0,
-//       september: 0,
-//       october: 0,
-//       november: 0,
-//       december: 0,
-//     },
-//   });
-// };
-
-export const updateSales = async (formData) => {
+export async function updateSales(formData) {
   const january = Number(formData.get("january"));
   const february = Number(formData.get("february"));
   const march = Number(formData.get("march"));
@@ -155,4 +133,4 @@ export const updateSales = async (formData) => {
       december,
     },
   });
-};
+}
