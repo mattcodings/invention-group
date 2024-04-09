@@ -1,9 +1,6 @@
 import HeroHeader from "@/components/HeroHeader";
 import NavigationButton from "@/components/NavigationButton";
 import Processes from "@/components/process/Processes";
-import ProcessStepLeft from "@/components/process/ProcessStepLeft";
-import ProcessStepRight from "@/components/process/ProcessStepRight";
-import Image from "next/image";
 
 const ProcessPage = () => {
   return (
@@ -18,6 +15,7 @@ const ProcessPage = () => {
       <h2 className="text-6xl text-center my-20 capitalize">
         The Process From start to finish
       </h2>
+
       <div className="w-[90%] mx-auto">
         <Processes />
       </div>

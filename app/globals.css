@@ -43,6 +43,10 @@
   padding: 6px 0px;
 }
 
+.polygon {
+  clip-path: polygon(60% 0, 100% 0, 100% 100%, 0 100%, 0 30%);
+}
+
 /* Clerk Sign In/Sign Up */
 .cl-internal-b3fm6y {
   display: none;
