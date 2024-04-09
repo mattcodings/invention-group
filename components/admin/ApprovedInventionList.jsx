@@ -38,7 +38,7 @@ const ApprovedInventionList = async () => {
                 </p>
                 <p className="text-2xl mb-8">{invention.description}</p>
 
-                <div className="flex">
+                <div className="flex justify-around">
                   <Link href={`/admin/${invention.id}`}>
                     <button className="btn bg-neutral text-primary border-primary text-2xl hover:bg-primary hover:text-secondary">
                       Edit Sales
