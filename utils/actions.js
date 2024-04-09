@@ -3,7 +3,6 @@ import prisma from "@/utils/db";
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 export async function getAllPendingInventions() {
-  "use server";
   try {
     const inventions = await prisma.invention.findMany({
       orderBy: {
