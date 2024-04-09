@@ -61,7 +61,7 @@ function Form() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="border-2 rounded-lg border-neutral p-8 bg-secondary"
+      className="border-1 rounded-lg border-neutral p-8 bg-secondary"
     >
       {errorMessage ? <div>{errorMessage}</div> : ""}
 
