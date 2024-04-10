@@ -21,7 +21,6 @@ export async function createInvention(formData) {
   const nameOfInventor = formData.get("nameOfInventor");
   const nameOfInvention = formData.get("nameOfInvention");
   const description = formData.get("description");
-
   await prisma.invention.create({
     data: {
       userId: userId,
@@ -42,7 +41,6 @@ export async function denyInvention(formData) {
     where: { id },
   });
   redirect("/admin");
-  // revalidatePath("/admin");
 }
 
 export async function getInvention(id) {
