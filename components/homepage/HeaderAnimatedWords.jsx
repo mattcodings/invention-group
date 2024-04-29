@@ -12,9 +12,11 @@ const HeaderAnimatedWords = () => {
     return () => clearInterval(interval);
   }, [currentIndex]);
   return (
-    <h1 className="text-4xl lg:text-7xl tracking-wider drop-shadow-lg font-serif text-center font-bold">
+    <h1 className="text-4xl lg:text-7xl tracking-wider drop-shadow-lg font-serif font-bold lg:mb-20">
       Together We{" "}
-      <span className=" slide-animation text-neutral">{words[currentIndex]}</span>
+      <span className=" slide-animation text-neutral">
+        {words[currentIndex]}
+      </span>
     </h1>
   );
 };

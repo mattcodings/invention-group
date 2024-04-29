@@ -9,7 +9,10 @@ const SingleInventionPage = async ({ params }) => {
   console.log(newSales);
   return (
     <div>
-      <Link href="/admin" className="btn btn-accent">
+      <Link
+        href="/admin"
+        className="btn btn-neutral text-primary border-primary my-4 ml-8"
+      >
         Back to inventions
       </Link>
       {invention.isApproved ? (

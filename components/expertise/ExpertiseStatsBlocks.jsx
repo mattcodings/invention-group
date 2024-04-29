@@ -4,7 +4,7 @@ import { FaAward } from "react-icons/fa6";
 
 const ExpertiseStatsBlocks = () => {
   return (
-    <div className="md:flex gap-8 justify-around bg-secondary text-primary py-4 items-start">
+    <div className="md:flex gap-8 justify-around bg-secondary text-primary py-20 items-start">
       <div>
         <GiGearHammer size={120} className="m-auto" />
         <h5 className="text-6xl text-center mt-4">300+</h5>

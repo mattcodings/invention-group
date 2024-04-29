@@ -29,9 +29,9 @@ const MonthlySalesForm = ({ inventionId, newSales }) => {
   return (
     <form
       action={updateSales}
-      className="w-[70%] mx-auto border-8 lg:p-8 md:p-6 sm:p-4 rounded-lg border-neutral bg-primary text-white"
+      className="lg:w-[70%] mx-auto border-8 lg:p-8 md:p-6 sm:p-4 rounded-lg border-neutral bg-primary text-white"
     >
-      <h2 className="lg:text-5xl text-center mb-20">
+      <h2 className="lg:text-5xl text-2xl text-center mb-20">
         Enter the sales for this invention
       </h2>
       <input hidden type="text" name="salesId" defaultValue={id} />

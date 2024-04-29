@@ -19,7 +19,7 @@ const ProcessPage = () => {
       <div className="w-[90%] mx-auto">
         <Processes />
       </div>
-      <p className="text-center text-5xl">
+      <p className="text-center mt-8 text-3xl">
         When you are ready to begin, submit an invention idea to us!
       </p>
       <div className="text-center my-20">

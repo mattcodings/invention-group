@@ -16,7 +16,7 @@ const AboutPage = () => {
             aspects of your project."
         />
       </div>
-      <h3 className="capitalize text-5xl text-center mb-10 font-serif">
+      <h3 className="text-5xl text-center my-20 font-bold text-primary">
         how we can help you
       </h3>
       <div className="lg:flex justify-around mx-auto items-center mb-32 w-[80%] about-page text-primary">
@@ -31,7 +31,7 @@ const AboutPage = () => {
         </div>
         <Accordion />
       </div>
-      <div className="bg-secondary py-20 mb-40">
+      <div className="bg-secondary py-20 mb-20">
         <div className="lg:flex w-[85%] mx-auto justify-around">
           <InfoCard
             img="/images/map-of-usa.jpg"
@@ -57,7 +57,7 @@ const AboutPage = () => {
       <div className="text-center mb-40">
         <NavigationButton
           text="Request Free Invention Evaluation"
-          link="/about"
+          link="/submit-invention"
         />
       </div>
     </div>

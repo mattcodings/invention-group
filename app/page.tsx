@@ -3,6 +3,7 @@ import WhyChooseUs from "@/components/homepage/WhyChooseUs";
 import UserToDo from "@/components/homepage/UserToDo";
 import Image from "next/image";
 import HeroHeader from "@/components/HeroHeader";
+import NavigationButton from "@/components/NavigationButton";
 
 const Home = () => {
   return (
@@ -17,14 +18,13 @@ const Home = () => {
         Why Choose Us?
       </h3>
       <WhyChooseUs />
+
       <UserToDo />
       <h3 className="text-5xl text-center my-20 text-primary">
         Lets Get Started!
       </h3>
       <div className="text-center my-20">
-        <button className=" btn-primary text-3xl p-8 border rounded-2xl bg-primary">
-          Create an Account
-        </button>
+        <NavigationButton text="Create an Account" link="/sign-in" />
       </div>
     </div>
   );

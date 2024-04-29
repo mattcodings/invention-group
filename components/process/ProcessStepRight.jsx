@@ -4,7 +4,7 @@ import Image from "next/image";
 const ProcessStepRight = ({ title, description, img, stepNumber }) => {
   return (
     <div className="p-8 text-primary">
-      <div className="flex gap-20 w-[70%] mx-auto items-center">
+      <div className="flex lg:gap-20 gap-10 lg:w-[70%] mx-auto items-center flex-wrap lg:flex-nowrap">
         <Image src={img} width={500} height={300} alt={title} />
         <div>
           <span className="border-4 px-6 py-4 text-2xl font-bold rounded-full mb-6 inline-block border-neutral">

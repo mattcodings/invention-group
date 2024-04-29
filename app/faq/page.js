@@ -4,8 +4,10 @@ import HeroHeader from "@/components/HeroHeader";
 const FAQPage = () => {
   return (
     <div>
-      <HeroHeader heading="Frequently Asked Questions" />
-
+      <HeroHeader
+        heading="Frequently Asked Questions"
+        headingText="If you have any questions, please feel free to email us at theinventiongroup@gmail.com"
+      />
       <AllQuestions />
     </div>
   );

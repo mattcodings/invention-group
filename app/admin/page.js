@@ -8,35 +8,40 @@ const AdminPage = async () => {
     redirect("/");
   }
   return (
-    <div className="min-h-screen flex justify-center items-center">
-      <div role="tablist" className="tabs tabs-lifted">
-        <input
-          type="radio"
-          name="my_tabs_2"
-          role="tab"
-          className="tab text-2xl "
-          aria-label="Pending Invention List"
-          defaultChecked
-        />
-        <div
-          role="tabpanel"
-          className="tab-content border-base-300 rounded-box p-6 bg-primary"
-        >
-          <PendingInventionList />
-        </div>
+    <div>
+      <div className="min-h-screen">
+        <h2 className="text-center text-5xl my-20">Inventions</h2>
+        <div className="flex justify-center items-center">
+          <div role="tablist" className="tabs tabs-lifted">
+            <input
+              type="radio"
+              name="my_tabs_2"
+              role="tab"
+              className="tab text-2xl "
+              aria-label="Pending"
+              defaultChecked
+            />
+            <div
+              role="tabpanel"
+              className="tab-content rounded-box p-2 bg-primary"
+            >
+              <PendingInventionList />
+            </div>
 
-        <input
-          type="radio"
-          name="my_tabs_2"
-          role="tab"
-          className="tab text-2xl"
-          aria-label="Approved Invention List"
-        />
-        <div
-          role="tabpanel"
-          className="tab-content bg-primary border-base-300 rounded-box p-6"
-        >
-          <ApprovedInventionList />
+            <input
+              type="radio"
+              name="my_tabs_2"
+              role="tab"
+              className="tab text-2xl"
+              aria-label="Approved"
+            />
+            <div
+              role="tabpanel"
+              className="tab-content bg-primary rounded-box p-2"
+            >
+              <ApprovedInventionList />
+            </div>
+          </div>
         </div>
       </div>
     </div>

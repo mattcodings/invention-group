@@ -3,11 +3,9 @@ import DenyInvention from "@/components/admin/DenyInvention";
 import Link from "next/link";
 const PendingInventionList = async () => {
   const inventions = await getAllPendingInventions();
-
-  if (inventions.length === 0) {
-    return <h2 className="text-white p-8 text-3xl">No inventions submitted</h2>;
-  }
-
+  const anyPendingInventions = inventions.some(
+    (invention) => !invention.isApproved
+  );
   return (
     <div>
       <h2 className="text-3xl text-center mb-8 font-bold text-neutral">
@@ -50,6 +48,11 @@ const PendingInventionList = async () => {
           }
         })}
       </ul>
+      {!anyPendingInventions && (
+        <p className="text-2xl text-white">
+          There are currently no pending inventions
+        </p>
+      )}
     </div>
   );
 };

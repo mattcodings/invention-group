@@ -73,14 +73,6 @@ const Processes = () => {
             img={process.img}
           />
         );
-        // return (
-        //   <ProcessStep
-        //     key={process.description}
-        //     title={process.title}
-        //     description={process.description}
-        //     stepNumber={process.stepNumber}
-        //   />
-        // );
       })}
     </ul>
   );

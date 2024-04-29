@@ -15,12 +15,12 @@ const ExpertisePage = () => {
           that have the most potential."
       />
       <div className="w-[90%] mx-auto">
-        <h2 className="text-5xl text-center my-20 font-bold">
+        <h2 className="text-5xl text-center my-20 font-bold text-primary">
           Use Our 30 Years of Experience to Drive Your Success
         </h2>
         <ExpertiseBlockSection />
       </div>
-      <div className="mt-40">
+      <div className="mt-20">
         <ExpertiseStatsBlocks />
       </div>
       <p className="text-center mt-8 text-3xl">

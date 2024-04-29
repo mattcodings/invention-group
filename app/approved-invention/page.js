@@ -22,14 +22,11 @@ const ApprovedInventionPage = async () => {
   const lastSignInDate = new Date(user.lastSignInAt).toLocaleString();
   const accountCreatedDate = new Date(user.createdAt).toLocaleString();
   return (
-    <div className="w-[80%] mx-auto">
+    <div className="lg:w-[80%] mx-auto">
       <h2 className="text-6xl text-center my-20">My Invention</h2>
       <div className="">
         <div className="p-6">
           <ul className="flex justify-between text-center flex-wrap">
-            {/* <li className="text-2xl py-6">
-              <p className="text-2xl">ID:</p> <p>{userId}</p>
-            </li> */}
             <li className="text-2xl py-6 border-4 border-t-0 p-4 w-1/4 min-w-52 break-words">
               <p className="text-2xl">Account Created:</p>{" "}
               <p>{accountCreatedDate}</p>
