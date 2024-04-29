@@ -4,7 +4,7 @@ const HeroHeader = ({ heading, headingText, dynamicHeader }) => {
       <div>
         <div className="lg:w-[70%] mx-auto border-8 px-8 py-8 bg-primary text-white opacity-85 rounded-[20px]">
           <div className=" mb-4">{dynamicHeader}</div>
-          <h1 className="text-3xl tracking-wider lg:text-4xl border-b-2 border-neutral pb-4">
+          <h1 className="text-3xl tracking-wider lg:text-5xl border-b-2 border-neutral pb-4">
             {heading}
           </h1>
           <div className=" my-10 md:mt-8 md:mb-20">

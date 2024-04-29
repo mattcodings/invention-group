@@ -1,6 +1,5 @@
 import { approveInvention, denyInvention } from "@/utils/actions";
 import DenyInvention from "./DenyInvention";
-
 const ApproveInvention = async ({ invention }) => {
   const {
     id,
