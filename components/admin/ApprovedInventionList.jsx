@@ -32,7 +32,7 @@ const ApprovedInventionList = () => {
   }
 
   return (
-    <div>
+    <div className="lg:w-[700px] md:w-[600px]">
       <h2 className="text-3xl text-center mb-8 font-bold text-neutral">
         Approved Invention List
       </h2>

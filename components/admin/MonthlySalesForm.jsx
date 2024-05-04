@@ -29,7 +29,7 @@ const MonthlySalesForm = ({ inventionId, newSales }) => {
   return (
     <form
       action={updateSales}
-      className="lg:w-[70%] mx-auto border-8 lg:p-8 md:p-6 sm:p-4 rounded-lg border-neutral bg-primary text-white"
+      className="lg:w-[70%] mx-auto border-8 lg:p-8 md:p-6 sm:p-4 rounded-lg border-neutral bg-primary text-white mb-8"
     >
       <h2 className="lg:text-5xl text-2xl text-center mb-20">
         Enter the sales for this invention
@@ -49,7 +49,7 @@ const MonthlySalesForm = ({ inventionId, newSales }) => {
       <div className="text-center">
         <button
           type="submit"
-          className="btn bg-primary font-bold text-neutral text-2xl border-secondary border-4 join-item capitalize mb-4"
+          className="btn bg-primary font-bold text-neutral text-2xl border-secondary border-4 join-item capitalize mb-4 hover:bg-secondary hover:text-primary"
           onClick={handleButtonClick}
         >
           Update Sales

@@ -17,23 +17,25 @@ const PendingInventionList = async () => {
             return (
               <li
                 key={invention.id}
-                className="border-8 p-8 m-8 border-primary bg-secondary rounded-lg"
+                className="border-2 p-4 my-8 border-primary bg-secondary rounded-lg lg:w-[700px] md:w-[600px]"
               >
-                <h3 className="capitalize text-2xl my-8">
+                <h3 className="capitalize text-2xl my-8 w-[100%]">
                   <span className="font-bold">Invention Name: </span>
                   {invention.nameOfInvention}
                 </h3>
-                <h3 className="capitalize text-2xl my-8">
+                <h3 className="capitalize text-2xl my-8 w-[100%]">
                   <span className="font-bold">Inventor: </span>
                   {invention.nameOfInventor}
                 </h3>
-                <h3 className="text-2xl my-8">
-                  <span className="font-bold">UserID:</span> {invention.userId}
+                <h3 className="text-2xl my-8 w-[100%]">
+                  <span className="font-bold">UserID: </span> {invention.userId}
                 </h3>
-                <p className="text-2xl mb-2 font-bold">
+                <p className="text-2xl mb-2 font-bold w-[100%]">
                   Invention Description:
                 </p>
-                <p className="text-2xl mb-8">{invention.description}</p>
+                <p className="text-2xl mb-8 w-[100%]">
+                  {invention.description}
+                </p>
                 <div className="flex justify-evenly">
                   <Link
                     href={`/admin/${invention.id}`}
