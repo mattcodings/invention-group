@@ -7,7 +7,7 @@ const SearchInventions = ({ onSearchChange }) => {
       </label>
       <input
         id="search-inventions"
-        className="w-1/2"
+        className="w-1/2 text-black"
         type="text"
         placeholder="Search by invention or inventor"
         onChange={(e) => onSearchChange(e.target.value)}

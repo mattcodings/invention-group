@@ -24,27 +24,26 @@ const ApprovedInventionPage = async () => {
   return (
     <div className="lg:w-[80%] mx-auto">
       <h2 className="text-6xl text-center my-20">My Invention</h2>
-      <div className="">
-        <div className="p-6">
-          <ul className="flex justify-between text-center flex-wrap">
-            <li className="text-2xl py-6 border-4 border-t-0 p-4 w-1/4 min-w-52 break-words">
-              <p className="text-2xl">Account Created:</p>{" "}
-              <p>{accountCreatedDate}</p>
-            </li>
-            <li className="text-2xl py-6 border-4 border-t-0 p-4 w-1/4 min-w-52 break-words">
-              <p className="text-2xl">Last Login:</p> <p>{lastSignInDate}</p>
-            </li>
 
-            <li className="text-2xl py-6 border-4 border-t-0 p-8 w-1/4 min-w-52 break-words">
-              <p className="text-2xl">Name of Inventor:</p>
-              <p>{invention.nameOfInventor}</p>
-            </li>
-            <li className="text-2xl py-6 border-4 border-t-0 p-8 w-1/4 min-w-52 break-words">
-              <p className="text-2xl">Inventor Email:</p>
-              <p>{user.emailAddresses[0].emailAddress}</p>
-            </li>
-          </ul>
-        </div>
+      <div className="p-6">
+        <ul className="flex justify-center text-center flex-wrap">
+          <li className="text-2xl py-6 border-4 border-t-0 p-4 w-1/4 min-w-52 break-words">
+            <p className="text-2xl">Account Created:</p>{" "}
+            <p>{accountCreatedDate}</p>
+          </li>
+          <li className="text-2xl py-6 border-4 border-t-0 p-4 w-1/4 min-w-52 break-words">
+            <p className="text-2xl">Last Login:</p> <p>{lastSignInDate}</p>
+          </li>
+
+          <li className="text-2xl py-6 border-4 border-t-0 p-8 w-1/4 min-w-52 break-words">
+            <p className="text-2xl">Name of Inventor:</p>
+            <p>{invention.nameOfInventor}</p>
+          </li>
+          <li className="text-2xl py-6 border-4 border-t-0 p-8 w-1/4 min-w-52 break-words">
+            <p className="text-2xl">Inventor Email:</p>
+            <p>{user.emailAddresses[0].emailAddress}</p>
+          </li>
+        </ul>
 
         <ApprovedInventionData invention={invention} />
       </div>

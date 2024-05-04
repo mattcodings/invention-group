@@ -1,6 +1,9 @@
+"use client";
 import { approveInvention, denyInvention } from "@/utils/actions";
 import DenyInvention from "./DenyInvention";
-const ApproveInvention = async ({ invention }) => {
+import { useRouter } from "next/navigation";
+const ApproveInvention = ({ invention }) => {
+  const router = useRouter();
   const {
     id,
     isApproved,
@@ -14,8 +17,22 @@ const ApproveInvention = async ({ invention }) => {
   const newId = async () => {
     return await invention.id;
   };
-  const inventionId = await newId();
-  console.log(inventionId);
+  const inventionId = async () => {
+    return await newId();
+  };
+
+  const handleApproveSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append("id", id);
+    try {
+      await approveInvention(formData);
+      router.push("/admin");
+      router.refresh();
+    } catch (error) {
+      console.error("Failed to approve invention:", error);
+    }
+  };
 
   return (
     <div className="border-2 p-8 border-primary bg-primary text-white rounded-lg w-[500px] mx-auto mb-40">
@@ -38,7 +55,7 @@ const ApproveInvention = async ({ invention }) => {
         <p className="break-words">{invention.userId}</p>
       </h3>
       <div className="flex justify-around">
-        <form action={approveInvention}>
+        <form onSubmit={handleApproveSubmit}>
           <input type="hidden" name="id" defaultValue={inventionId} />
           <button
             type="submit"

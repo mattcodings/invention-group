@@ -57,7 +57,7 @@ const SalesBarChart = ({ newSales }) => {
           <p className="text-center text-3xl text-accent">${totalProfit}</p>
         </div>
       </div>
-      <ResponsiveContainer width="80%" height={275} className="mx-auto">
+      <ResponsiveContainer width="100%" height={275} className="mx-auto">
         <BarChart data={sales} className="mx-auto bg-primary mb-8">
           <YAxis tick={{ fill: "#B7DBEB" }} tickLine={{ stroke: "#B7DBEB" }} />
           <XAxis

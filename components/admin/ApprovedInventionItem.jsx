@@ -1,5 +1,5 @@
 import Link from "next/link";
-import DenyInvention from "./DenyInvention";
+import DenyApprovedInvention from "./DenyApprovedInvention";
 
 const ApprovedInventionItem = ({ invention }) => {
   return (
@@ -27,7 +27,7 @@ const ApprovedInventionItem = ({ invention }) => {
             Edit Sales
           </button>
         </Link>
-        <DenyInvention id={invention.id} />
+        <DenyApprovedInvention id={invention.id} />
       </div>
     </li>
   );

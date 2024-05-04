@@ -1,11 +1,12 @@
-import { SignOutButton, UserButton, auth, currentUser } from "@clerk/nextjs";
+import { auth, currentUser } from "@clerk/nextjs";
 import Navlink from "./Navlink";
 import { findInvention } from "@/utils/actions";
-import { IoLogOutOutline } from "react-icons/io5";
+
 import Link from "next/link";
 import SmallNavMenu from "@/components/nav/SmallNavMenu";
 import Image from "next/image";
 import StaticNavbar from "@/components/nav/StaticNavbar";
+import SignOut from "@/components/nav/SignOut";
 
 const links = [
   { title: "Home", path: "/" },
@@ -76,11 +77,10 @@ const Navbar = async () => {
           </li>
           {userId ? (
             <li className="text-center">
-              <p>{user.emailAddresses[0].emailAddress}</p>
               <div className="flex justify-center">
-                <SignOutButton />
-                <IoLogOutOutline className="text-2xl" />
+                <SignOut />
               </div>
+              {/* <p>{user.emailAddresses[0].emailAddress}</p> */}
             </li>
           ) : (
             <li className="hover:bg-secondary hover:text-primary p-2 rounded-lg font-semibold">

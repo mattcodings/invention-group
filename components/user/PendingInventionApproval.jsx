@@ -1,5 +1,7 @@
 import { currentUser } from "@clerk/nextjs";
 
+// This component will show after an invention has been submitted
+
 const PendingInventionApproval = async ({ invention }) => {
   const user = await currentUser();
   return (

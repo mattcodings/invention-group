@@ -27,8 +27,3 @@ export default function RootLayout({
     </ClerkProvider>
   );
 }
-// retro background
-// forest
-// business
-// lemonade
-// dim

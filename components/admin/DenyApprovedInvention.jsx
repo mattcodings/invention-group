@@ -1,10 +1,9 @@
 "use client";
 import { denyInvention } from "@/utils/actions";
 import { useRouter } from "next/navigation";
-const DenyInvention = ({ id }) => {
+const DenyApprovedInvention = ({ id }) => {
   const router = useRouter();
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async () => {
     const formData = new FormData();
     formData.append("id", id);
     try {
@@ -27,4 +26,4 @@ const DenyInvention = ({ id }) => {
     </form>
   );
 };
-export default DenyInvention;
+export default DenyApprovedInvention;
