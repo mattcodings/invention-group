@@ -23,7 +23,7 @@ const AdminPage = async () => {
             />
             <div
               role="tabpanel"
-              className="tab-content rounded-box p-2 bg-primary"
+              className="tab-content rounded-box p-2 bg-primary w-[700px]"
             >
               <PendingInventionList />
             </div>
@@ -37,7 +37,7 @@ const AdminPage = async () => {
             />
             <div
               role="tabpanel"
-              className="tab-content bg-primary rounded-box p-2"
+              className="tab-content bg-primary rounded-box p-2 w-[700px]"
             >
               <ApprovedInventionList />
             </div>

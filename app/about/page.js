@@ -16,7 +16,7 @@ const AboutPage = () => {
             aspects of your project."
         />
       </div>
-      <h3 className="text-5xl text-center my-20 font-bold text-primary">
+      <h3 className="text-5xl text-center my-20 font-bold text-primary capitalize">
         how we can help you
       </h3>
       <div className="lg:flex justify-around mx-auto items-center mb-32 w-[80%] about-page text-primary">
